@@ -39,33 +39,37 @@ class LoginPage extends StatelessWidget {
             alignment: Alignment(0.003, -0.086),
             child: SizedBox(
               width: 96.0,
-              height: 29.0,
-              child: Text(
-                'Login',
-                style: TextStyle(
-                  fontFamily: 'Product Sans',
-                  fontSize: 24,
-                  color: const Color(0xff357960),
-                  fontWeight: FontWeight.w700,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              height: 40.0,
+                child: Center(
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      fontFamily: 'Product Sans',
+                      fontSize: 24,
+                      color: const Color(0xff357960),
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.center,
+                  )
+                )
             ),
           ),
           const Align(
             alignment: Alignment(0.003, 0.14),
             child: SizedBox(
               width: 104.0,
-              height: 29.0,
-              child: Text(
-                'Sign up',
-                style: TextStyle(
-                  fontFamily: 'Product Sans',
-                  fontSize: 24,
-                  color: const Color(0xff357960),
-                  fontWeight: FontWeight.w700,
-                ),
-                textAlign: TextAlign.center,
+              height: 40.0,
+              child: Center(
+                child: Text(
+                  'Sign up',
+                  style: TextStyle(
+                    fontFamily: 'Product Sans',
+                    fontSize: 24,
+                    color: const Color(0xff357960),
+                    fontWeight: FontWeight.w700,
+                  ),
+                  textAlign: TextAlign.center,
+                )
               ),
             ),
           ),
