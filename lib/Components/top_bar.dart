@@ -9,7 +9,10 @@ class TopBar extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Pinned.fromPins(
+      Pin(start: -0.3, end: 0.0),
+      Pin(size: 95.2, start: 0.0),
+      child: Stack(
       children: <Widget>[
         Pinned.fromPins(
           Pin(start: 0.0, end: 0.0),
@@ -39,7 +42,11 @@ class TopBar extends StatelessWidget {
           ),
         ),
       ],
-    );
+    ),
+          );
+    
+    
+    
   }
 }
 

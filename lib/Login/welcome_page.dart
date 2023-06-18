@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:tastetrack/Components/Login/Welcome/sign_up_button.dart';
+import '../Components/Login/Welcome/login_button.dart';
 import 'signup_page.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'login_page.dart';
@@ -15,103 +17,11 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: const Color(0xfff3f3cf),
       body: Stack(
         children: <Widget>[
-          Pinned.fromPins(
-            Pin(start: 50.0, end: 49.0),
-            Pin(size: 53.0, middle: 0.7872),
-            child:
-                // Adobe XD layer: 'Sign up Button' (group)
-                PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.SlideLeft,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => SignUpPage(),
-                ),
-              ],
-              child: Stack(
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      width: 294.0,
-                      height: 53.0,
-                      decoration: BoxDecoration(
-                        color: const Color(0x99ffffff),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
-                  ),
-                  Pinned.fromPins(
-                    Pin(size: 104.0, middle: 0.5),
-                    Pin(start: 12.0, end: 0.0),
-                    child: const Text(
-                      'Sign up',
-                      style: TextStyle(
-                        fontFamily: 'Product Sans',
-                        fontSize: 24,
-                        color: Color(0xff0a3c03),
-                        fontWeight: FontWeight.w700,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: 50.0, end: 49.0),
-            Pin(size: 53.0, middle: 0.6708),
-            child:
-                // Adobe XD layer: 'Login Button' (group)
-                PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.SlideLeft,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => const LoginPage(),
-                ),
-              ],
-              child: Stack(
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      width: 294.0,
-                      height: 53.0,
-                      decoration: BoxDecoration(
-                        color: const Color(0x99ffffff),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
-                  ),
-                  Pinned.fromPins(
-                    Pin(size: 96.0, middle: 0.5),
-                    Pin(start: 12.0, end: 0.0),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        fontFamily: 'Product Sans',
-                        fontSize: 24,
-                        color: Color(0xff0a3c03),
-                        fontWeight: FontWeight.w700,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(start: -0.3, end: 0.0),
-            Pin(size: 95.2, start: 0.0),
-            child:
-                // Adobe XD layer: 'Top Bar' (component)
-                const TopBar(),
-          ),
+
+          // Top Bar component
+          const TopBar(),
+
+          // Welcome Title
           const Align(
             alignment: Alignment(0.004, -0.567),
             child: SizedBox(
@@ -130,6 +40,8 @@ class WelcomePage extends StatelessWidget {
               ),
             ),
           ),
+
+          // Description of TasteTrack
           Pinned.fromPins(
             Pin(start: 26.0, end: 22.0),
             Pin(size: 203.0, middle: 0.3698),
@@ -161,6 +73,47 @@ class WelcomePage extends StatelessWidget {
                   TextHeightBehavior(applyHeightToFirstAscent: false),
             ),
           ),
+          
+          // Sign Up button
+          Pinned.fromPins(
+            Pin(start: 50.0, end: 49.0),
+            Pin(size: 53.0, middle: 0.7872),
+            child:
+              // Sign Up button animation
+              PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.SlideLeft,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => SignUpPage(), // linking to the Sign Up page
+                ),
+              ],
+              child: const SignUpButton(), // Sign Up button component
+            ),
+          ),
+
+
+          // Login button
+          Pinned.fromPins(
+            Pin(start: 50.0, end: 49.0),
+            Pin(size: 53.0, middle: 0.6708),
+            child:
+                // Login Button Animation
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.SlideLeft,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => const LoginPage(), // linking to the Login page
+                ),
+              ],
+              child: const LoginPageButton(), // Login button component
+            ),
+          ),
+          
+
         ],
       ),
     );
