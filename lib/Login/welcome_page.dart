@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
+import 'package:tastetrack/XDUtil/pinned.dart';
 import 'package:tastetrack/Components/Login/Welcome/sign_up_button.dart';
 import '../Components/Login/Welcome/login_button.dart';
 import 'signup_page.dart';
-import 'package:adobe_xd/page_link.dart';
+import 'package:tastetrack/XDUtil/page_link.dart';
 import 'login_page.dart';
 import '../Components/top_bar.dart';
 
@@ -17,7 +17,6 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: const Color(0xfff3f3cf),
       body: Stack(
         children: <Widget>[
-
           // Top Bar component
           const TopBar(),
 
@@ -73,26 +72,26 @@ class WelcomePage extends StatelessWidget {
                   TextHeightBehavior(applyHeightToFirstAscent: false),
             ),
           ),
-          
+
           // Sign Up button
           Pinned.fromPins(
             Pin(start: 50.0, end: 49.0),
             Pin(size: 53.0, middle: 0.7872),
             child:
-              // Sign Up button animation
-              PageLink(
+                // Sign Up button animation
+                PageLink(
               links: [
                 PageLinkInfo(
                   transition: LinkTransition.SlideLeft,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => SignUpPage(), // linking to the Sign Up page
+                  pageBuilder: () =>
+                      SignUpPage(), // linking to the Sign Up page
                 ),
               ],
               child: const SignUpButton(), // Sign Up button component
             ),
           ),
-
 
           // Login button
           Pinned.fromPins(
@@ -106,14 +105,13 @@ class WelcomePage extends StatelessWidget {
                   transition: LinkTransition.SlideLeft,
                   ease: Curves.easeOut,
                   duration: 0.3,
-                  pageBuilder: () => const LoginPage(), // linking to the Login page
+                  pageBuilder: () =>
+                      const LoginPage(), // linking to the Login page
                 ),
               ],
               child: const LoginPageButton(), // Login button component
             ),
           ),
-          
-
         ],
       ),
     );

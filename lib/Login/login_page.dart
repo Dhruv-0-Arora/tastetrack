@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
+import 'package:tastetrack/XDUtil/pinned.dart';
 import '../Components/top_bar.dart';
 
 class LoginPage extends StatelessWidget {
