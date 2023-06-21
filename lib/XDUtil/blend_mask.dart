@@ -8,7 +8,7 @@ class BlendMask extends SingleChildRenderObjectWidget {
   final double opacity;
   final ui.Rect? region;
 
-  BlendMask(
+  const BlendMask(
       {required this.blendMode,
       this.opacity = 1.0,
       this.region,
@@ -43,7 +43,7 @@ class RenderBlendMask extends RenderProxyBox {
   void paint(context, offset) {
     // Create a new layer and specify the blend mode and opacity to composite it with:
     context.canvas.saveLayer(
-        (_region != null ? _region : offset & size),
+        (_region ?? offset & size),
         Paint()
           ..blendMode = _blendMode
           ..color = Color.fromARGB((_opacity * 255).round(), 255, 255, 255));

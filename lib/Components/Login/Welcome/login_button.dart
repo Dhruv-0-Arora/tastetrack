@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
 
-class LoginPageButton extends StatelessWidget {
-  const LoginPageButton({
+class LoginButton extends StatelessWidget {
+  const LoginButton({
     Key? key,
   }) : super(key: key);
   @override
@@ -20,10 +20,10 @@ class LoginPageButton extends StatelessWidget {
             ),
           ),
         ),
-        Pinned.fromPins(
+        const Pinned.fromPins(
           Pin(size: 96.0, middle: 0.5),
           Pin(start: 12.0, end: 0.0),
-          child: const Text(
+          child: Text(
             'Login',
             style: TextStyle(
               fontFamily: 'Product Sans',

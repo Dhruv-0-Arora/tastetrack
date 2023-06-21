@@ -20,10 +20,10 @@ class SignUpButton extends StatelessWidget {
             ),
           ),
         ),
-        Pinned.fromPins(
+        const Pinned.fromPins(
           Pin(size: 104.0, middle: 0.5),
           Pin(start: 12.0, end: 0.0),
-          child: const Text(
+          child: Text(
             'Sign up',
             style: TextStyle(
               fontFamily: 'Product Sans',

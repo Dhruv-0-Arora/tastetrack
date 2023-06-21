@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import 'package:tastetrack/Components/Login/Welcome/sign_up_button.dart';
-import '../Components/Login/Welcome/login_button.dart';
-import 'signup_page.dart';
+import '../Components/Login/Welcome/sign_up_button.dart';
+import 'sign_up_page.dart';
 import 'package:tastetrack/XDUtil/page_link.dart';
+import '../Components/Login/Welcome/login_button.dart';
 import 'login_page.dart';
 import '../Components/top_bar.dart';
 
@@ -14,37 +14,47 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff3f3cf),
+      backgroundColor: const Color(0xffcbd6d5),
       body: Stack(
         children: <Widget>[
-          // Top Bar component
-          const TopBar(),
-
-          // Welcome Title
-          const Align(
-            alignment: Alignment(0.004, -0.567),
-            child: SizedBox(
-              width: 170.0,
-              height: 48.0,
-              child: Text(
-                'Welcome',
-                style: TextStyle(
-                  fontFamily: 'Product Sans',
-                  fontSize: 40,
-                  color: Color(0xff92a143),
-                  fontWeight: FontWeight.w700,
+          Pinned.fromPins(
+            const Pin(size: 294.0, middle: 0.5051),
+            const Pin(size: 53.0, start: 626.0),
+            child:
+                // Adobe XD layer: 'Sign up Button' (component)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.SlideLeft,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => const SignUpPage(),
                 ),
-                textAlign: TextAlign.center,
-                softWrap: false,
-              ),
+              ],
+              child: const SignUpButton(),
             ),
           ),
-
-          // Description of TasteTrack
           Pinned.fromPins(
-            Pin(start: 26.0, end: 22.0),
-            Pin(size: 203.0, middle: 0.3698),
-            child: const Text.rich(
+            const Pin(size: 294.0, middle: 0.5051),
+            const Pin(size: 53.0, start: 535.0),
+            child:
+                // Adobe XD layer: 'Login Button' (component)
+                PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.SlideLeft,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => const LoginPage(),
+                ),
+              ],
+              child: const LoginButton(),
+            ),
+          ),
+          const Pinned.fromPins(
+            Pin(startFraction: 0.0611, endFraction: 0.0611),
+            Pin(size: 203.0, start: 248.0),
+            child: Text.rich(
               TextSpan(
                 style: TextStyle(
                   fontFamily: 'Product Sans',
@@ -72,45 +82,27 @@ class WelcomePage extends StatelessWidget {
                   TextHeightBehavior(applyHeightToFirstAscent: false),
             ),
           ),
-
-          // Sign Up button
-          Pinned.fromPins(
-            Pin(start: 50.0, end: 49.0),
-            Pin(size: 53.0, middle: 0.7872),
-            child:
-                // Sign Up button animation
-                PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.SlideLeft,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () =>
-                      SignUpPage(), // linking to the Sign Up page
-                ),
-              ],
-              child: const SignUpButton(), // Sign Up button component
+          const Pinned.fromPins(
+            Pin(size: 154.0, middle: 0.5021),
+            Pin(size: 60.0, start: 164.0),
+            child: Text(
+              'Welcome',
+              style: TextStyle(
+                fontFamily: 'ScoutCond',
+                fontSize: 60,
+                color: Color(0xff8c9d32),
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.center,
+              softWrap: false,
             ),
           ),
-
-          // Login button
-          Pinned.fromPins(
-            Pin(start: 50.0, end: 49.0),
-            Pin(size: 53.0, middle: 0.6708),
+          const Pinned.fromPins(
+            Pin(start: -0.3, end: 0.0),
+            Pin(size: 95.2, start: 0.0),
             child:
-                // Login Button Animation
-                PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.SlideLeft,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () =>
-                      const LoginPage(), // linking to the Login page
-                ),
-              ],
-              child: const LoginPageButton(), // Login button component
-            ),
+                // Adobe XD layer: 'TopBar' (component)
+                TopBar(),
           ),
         ],
       ),

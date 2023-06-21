@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
 import '../Components/top_bar.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({
     Key? key,
   }) : super(key: key);
   @override
@@ -23,12 +23,12 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Align(
-            alignment: Alignment(0.003, -0.169),
+            alignment: Alignment(0.004, -0.167),
             child: SizedBox(
-              width: 90.0,
+              width: 116.0,
               height: 60.0,
               child: Text(
-                'Login',
+                'Signup',
                 style: TextStyle(
                   fontFamily: 'ScoutCond',
                   fontSize: 60,
@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Pinned.fromPins(
-            Pin(start: -0.3, end: 0.0),
+            Pin(start: 0.0, end: -0.3),
             Pin(size: 95.2, start: 0.0),
             child:
                 // Adobe XD layer: 'TopBar' (component)

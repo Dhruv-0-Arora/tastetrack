@@ -38,7 +38,7 @@ class PageLink extends StatelessWidget {
   final List<PageLinkInfo> links;
   final Widget child;
 
-  PageLink({Key? key, required this.links, required this.child})
+  const PageLink({Key? key, required this.links, required this.child})
       : super(key: key);
 
   void _handlePageLinkTriggered(BuildContext context, PageLinkInfo info) {
@@ -56,28 +56,28 @@ class PageLink extends StatelessWidget {
     Route route;
     switch (info.transition) {
       case LinkTransition.SlideUp:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, Offset(0, 1));
+        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(0, 1));
         break;
       case LinkTransition.SlideDown:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, Offset(0, -1));
+        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(0, -1));
         break;
       case LinkTransition.SlideLeft:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, Offset(1, 0));
+        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(1, 0));
         break;
       case LinkTransition.SlideRight:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, Offset(-1, 0));
+        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(-1, 0));
         break;
       case LinkTransition.PushUp:
-        route = _RouteFactory.push(pageBuilder, duration, ease, Offset(0, 1));
+        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(0, 1));
         break;
       case LinkTransition.PushDown:
-        route = _RouteFactory.push(pageBuilder, duration, ease, Offset(0, -1));
+        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(0, -1));
         break;
       case LinkTransition.PushLeft:
-        route = _RouteFactory.push(pageBuilder, duration, ease, Offset(1, 0));
+        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(1, 0));
         break;
       case LinkTransition.PushRight:
-        route = _RouteFactory.push(pageBuilder, duration, ease, Offset(-1, 0));
+        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(-1, 0));
         break;
       case LinkTransition.Fade:
       default:

@@ -6,7 +6,7 @@ class Pinned extends SingleChildRenderObjectWidget {
   final Pin hPin;
   final Pin vPin;
 
-  Pinned.fromPins(this.hPin, this.vPin, {required Widget child, Key? key})
+  const Pinned.fromPins(this.hPin, this.vPin, {required Widget child, Key? key})
       : super(key: key, child: child);
 
   Pinned({
@@ -115,7 +115,7 @@ class Pin {
   final double? size;
   final double? middle;
 
-  Pin(
+  const Pin(
       {this.start,
       this.startFraction,
       this.end,
@@ -154,6 +154,7 @@ class Pin {
   int get hashCode =>
       hashValues(start, startFraction, end, endFraction, size, middle);
 
+  @override
   String toString() {
     return "Pin(start: $start, startFraction: $startFraction, end: $end, endFraction: $endFraction, size: $size, middle: $middle, )";
   }
@@ -221,19 +222,19 @@ class RenderPinned extends RenderShiftedBox {
     RenderBox? kid = child;
 
     if (kid == null) {
-      size = constraints.constrain(Size(0, 0));
+      size = constraints.constrain(const Size(0, 0));
       return;
     }
     double maxW = constraints.maxWidth;
     double maxH = constraints.maxHeight;
-    _Span _hSpan = _calculateSpanFromPin(_hPin, maxW);
-    _Span _vSpan = _calculateSpanFromPin(_vPin, maxH);
+    _Span hSpan = _calculateSpanFromPin(_hPin, maxW);
+    _Span vSpan = _calculateSpanFromPin(_vPin, maxH);
 
     final BoxConstraints innerConstraints =
-        BoxConstraints.expand(width: _hSpan.size, height: _vSpan.size);
+        BoxConstraints.expand(width: hSpan.size, height: vSpan.size);
     kid.layout(innerConstraints);
     final BoxParentData childParentData = kid.parentData as BoxParentData;
-    childParentData.offset = Offset(_hSpan.start, _vSpan.start);
+    childParentData.offset = Offset(hSpan.start, vSpan.start);
 
     size = Size(maxW, maxH);
   }
@@ -244,10 +245,11 @@ class _Span {
   final double start;
   final double end;
 
-  _Span(this.start, this.end);
+  const _Span(this.start, this.end);
 
   double get size => max(0, end - start);
 
+  @override
   String toString() {
     return "_Span(start: $start, end: $end, )";
   }

@@ -16,7 +16,7 @@ class WelcomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: 390.26,
             height: 95.22,
             child: Row(
@@ -86,7 +86,7 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 38.19),
-          Container(
+          SizedBox(
             width: 294,
             height: 53,
             child: Row(
@@ -99,7 +99,7 @@ class WelcomePage extends StatelessWidget {
                   height: 53,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: Color(0x99ffffff),
+                    color: const Color(0x99ffffff),
                   ),
                   padding: const EdgeInsets.only(
                     left: 117,
@@ -128,7 +128,7 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 38.19),
-          Container(
+          SizedBox(
             width: 294,
             height: 53,
             child: Row(
@@ -141,7 +141,7 @@ class WelcomePage extends StatelessWidget {
                   height: 53,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: Color(0x99ffffff),
+                    color: const Color(0x99ffffff),
                   ),
                   padding: const EdgeInsets.only(
                     left: 106,
