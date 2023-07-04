@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tastetrack/Login/welcome_page.dart';
 import 'package:tastetrack/Pages/home_page.dart';
 
 void main() {

@@ -20,9 +20,7 @@ class WelcomePage extends StatelessWidget {
           Pinned.fromPins(
             const Pin(size: 294.0, middle: 0.5051),
             const Pin(size: 53.0, start: 626.0),
-            child:
-                // Adobe XD layer: 'Sign up Button' (component)
-                PageLink(
+            child: PageLink(
               links: [
                 PageLinkInfo(
                   transition: LinkTransition.SlideLeft,
@@ -37,9 +35,7 @@ class WelcomePage extends StatelessWidget {
           Pinned.fromPins(
             const Pin(size: 294.0, middle: 0.5051),
             const Pin(size: 53.0, start: 535.0),
-            child:
-                // Adobe XD layer: 'Login Button' (component)
-                PageLink(
+            child: PageLink(
               links: [
                 PageLinkInfo(
                   transition: LinkTransition.SlideLeft,
@@ -100,9 +96,7 @@ class WelcomePage extends StatelessWidget {
           const Pinned.fromPins(
             Pin(start: -0.3, end: 0.0),
             Pin(size: 95.2, start: 0.0),
-            child:
-                // Adobe XD layer: 'TopBar' (component)
-                TopBar(),
+            child: TopBar(),
           ),
         ],
       ),

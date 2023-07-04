@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:tastetrack/Pages/discover_page.dart';
+import 'package:tastetrack/Pages/settings_page.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tastetrack/XDUtil/page_link.dart';
 
-class NavBar extends StatelessWidget {
-  const NavBar({
+class NavBarHome extends StatelessWidget {
+  const NavBarHome({
     Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
+        /* 
+          Top Shadow for Navigation bar
+        */
         Container(
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
@@ -22,89 +27,95 @@ class NavBar extends StatelessWidget {
             ],
           ),
         ),
+
+        /*
+          Home Icon (Green)
+        */
         Pinned.fromPins(
           const Pin(size: 37.0, start: 43.0),
           const Pin(start: 11.0, end: 30.0),
-          child:
-              // Adobe XD layer: 'home' (shape)
-              Container(
+          child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/NavBar/homeGreen.png'),
+                image: AssetImage('assets/images/navbar/homeGreen.png'),
                 fit: BoxFit.fill,
               ),
             ),
           ),
         ),
-        Align(
-          alignment: const Alignment(-0.271, -0.034),
-          child: SizedBox(
-            width: 50.0,
-            height: 49.0,
-            child:
-                // Adobe XD layer: 'plus' (group)
-                Stack(
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
-                    borderRadius: const BorderRadius.all(
-                        Radius.elliptical(9999.0, 9999.0)),
-                    border:
-                        Border.all(width: 3.0, color: const Color(0xffadadad)),
-                  ),
-                ),
-                Pinned.fromPins(
-                  const Pin(size: 1.0, middle: 0.5102),
-                  const Pin(start: 11.5, end: 10.5),
-                  child: SvgPicture.string(
-                    _svg_wpz2d,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromPins(
-                  const Pin(start: 11.0, end: 11.0),
-                  const Pin(size: 1.0, middle: 0.5208),
-                  child: SvgPicture.string(
-                    _svg_xzhar,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ],
+
+        /*
+          Plus Icon 
+        */
+        Container(
+          decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage('asset/images/navbar/plus.png'),
+              fit: BoxFit.cover,
             ),
+            borderRadius:
+                const BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+            border: Border.all(width: 3.0, color: const Color(0xffadadad)),
           ),
+          margin: const EdgeInsets.fromLTRB(123.0, 16.0, 220.0, 13.0),
         ),
+
+        /*
+          Discover Icon
+        */
         Pinned.fromPins(
           const Pin(size: 64.0, middle: 0.6292),
           const Pin(start: 8.0, end: 6.0),
-          child:
-              // Adobe XD layer: 'discover' (shape)
-              Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/navbar/discover.png'),
-                fit: BoxFit.fill,
+          child: PageLink(
+            links: [
+              PageLinkInfo(
+                transition: LinkTransition.SlideLeft,
+                ease: Curves.easeOut,
+                duration: 0.3,
+                pageBuilder: () => const DiscoverPage(),
+              ),
+            ],
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/navbar/discover.png'),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),
         ),
+
+        /*
+          Settings Icon
+        */
         Pinned.fromPins(
           const Pin(size: 57.0, end: 35.0),
           const Pin(start: 11.0, end: 10.0),
-          child:
-              // Adobe XD layer: 'settings' (shape)
-              Container(
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage('assets/images/navbar/settings.png'),
-                fit: BoxFit.fill,
+          child: PageLink(
+            links: [
+              PageLinkInfo(
+                transition: LinkTransition.SlideLeft,
+                ease: Curves.easeOut,
+                duration: 0.3,
+                pageBuilder: () => const SettingsPage(),
               ),
-              borderRadius: BorderRadius.circular(47.0),
+            ],
+            child: Container(
+              decoration: BoxDecoration(
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/navbar/settings.png'),
+                  fit: BoxFit.fill,
+                ),
+                borderRadius: BorderRadius.circular(47.0),
+              ),
             ),
           ),
         ),
+
+        /*
+          Green text -> Home
+        */
         const Pinned.fromPins(
           Pin(size: 58.0, start: 34.0),
           Pin(start: 48.0, end: 6.0),
@@ -123,8 +134,3 @@ class NavBar extends StatelessWidget {
     );
   }
 }
-
-const String _svg_wpz2d =
-    '<svg viewBox="146.0 800.5 1.0 27.0" ><path transform="translate(146.0, 800.5)" d="M 0 0 L 0 27" fill="none" stroke="#adadad" stroke-width="3" stroke-miterlimit="4" stroke-linecap="round" /></svg>';
-const String _svg_xzhar =
-    '<svg viewBox="132.0 814.0 28.0 1.0" ><path transform="translate(132.0, 814.0)" d="M 0 0 L 28 0" fill="none" stroke="#adadad" stroke-width="3" stroke-miterlimit="4" stroke-linecap="round" /></svg>';
