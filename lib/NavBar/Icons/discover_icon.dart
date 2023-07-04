@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tastetrack/NavBar/transition_utility.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
 import 'package:tastetrack/XDUtil/page_link.dart';
 
 import '../../Pages/discover_page.dart';
 
 class DiscoverIcon extends StatelessWidget {
-  const DiscoverIcon({Key? key}) : super(key: key);
+  final String start;
+  const DiscoverIcon({required this.start, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,8 @@ class DiscoverIcon extends StatelessWidget {
       child: PageLink(
         links: [
           PageLinkInfo(
-            transition: LinkTransition.SlideLeft,
+            transition: TransitionUtility(start: start, target: "discover")
+                .getTransition(),
             ease: Curves.easeOut,
             duration: 0.3,
             pageBuilder: () => const DiscoverPage(),
