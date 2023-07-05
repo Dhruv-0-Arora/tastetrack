@@ -23,7 +23,7 @@ class WelcomePage extends StatelessWidget {
             child: PageLink(
               links: [
                 PageLinkInfo(
-                  transition: LinkTransition.SlideLeft,
+                  transition: LinkTransition.slideLeft,
                   ease: Curves.easeOut,
                   duration: 0.3,
                   pageBuilder: () => const SignUpPage(),
@@ -38,7 +38,7 @@ class WelcomePage extends StatelessWidget {
             child: PageLink(
               links: [
                 PageLinkInfo(
-                  transition: LinkTransition.SlideLeft,
+                  transition: LinkTransition.slideLeft,
                   ease: Curves.easeOut,
                   duration: 0.3,
                   pageBuilder: () => const LoginPage(),

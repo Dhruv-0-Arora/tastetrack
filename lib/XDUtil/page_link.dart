@@ -3,20 +3,20 @@ import 'package:collection/collection.dart';
 
 /// Enables Adobe XD prototype tap interactions / navigation.
 enum LinkTrigger {
-  Tap,
-  Drag,
+  tap,
+  drag,
 }
 
 enum LinkTransition {
-  Fade,
-  SlideLeft,
-  SlideRight,
-  SlideUp,
-  SlideDown,
-  PushUp,
-  PushDown,
-  PushLeft,
-  PushRight
+  fade,
+  slideLeft,
+  slideRight,
+  slideUp,
+  slideDown,
+  pushUp,
+  pushDown,
+  pushLeft,
+  pushRight
 }
 
 class PageLinkInfo {
@@ -28,8 +28,8 @@ class PageLinkInfo {
 
   PageLinkInfo(
       {this.pageBuilder,
-      this.trigger = LinkTrigger.Tap,
-      this.transition = LinkTransition.Fade,
+      this.trigger = LinkTrigger.tap,
+      this.transition = LinkTransition.fade,
       this.ease,
       this.duration});
 }
@@ -55,31 +55,39 @@ class PageLink extends StatelessWidget {
 
     Route route;
     switch (info.transition) {
-      case LinkTransition.SlideUp:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(0, 1));
+      case LinkTransition.slideUp:
+        route = _RouteFactory.slide(
+            pageBuilder, duration, ease, const Offset(0, 1));
         break;
-      case LinkTransition.SlideDown:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(0, -1));
+      case LinkTransition.slideDown:
+        route = _RouteFactory.slide(
+            pageBuilder, duration, ease, const Offset(0, -1));
         break;
-      case LinkTransition.SlideLeft:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(1, 0));
+      case LinkTransition.slideLeft:
+        route = _RouteFactory.slide(
+            pageBuilder, duration, ease, const Offset(1, 0));
         break;
-      case LinkTransition.SlideRight:
-        route = _RouteFactory.slide(pageBuilder, duration, ease, const Offset(-1, 0));
+      case LinkTransition.slideRight:
+        route = _RouteFactory.slide(
+            pageBuilder, duration, ease, const Offset(-1, 0));
         break;
-      case LinkTransition.PushUp:
-        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(0, 1));
+      case LinkTransition.pushUp:
+        route =
+            _RouteFactory.push(pageBuilder, duration, ease, const Offset(0, 1));
         break;
-      case LinkTransition.PushDown:
-        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(0, -1));
+      case LinkTransition.pushDown:
+        route = _RouteFactory.push(
+            pageBuilder, duration, ease, const Offset(0, -1));
         break;
-      case LinkTransition.PushLeft:
-        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(1, 0));
+      case LinkTransition.pushLeft:
+        route =
+            _RouteFactory.push(pageBuilder, duration, ease, const Offset(1, 0));
         break;
-      case LinkTransition.PushRight:
-        route = _RouteFactory.push(pageBuilder, duration, ease, const Offset(-1, 0));
+      case LinkTransition.pushRight:
+        route = _RouteFactory.push(
+            pageBuilder, duration, ease, const Offset(-1, 0));
         break;
-      case LinkTransition.Fade:
+      case LinkTransition.fade:
       default:
         route = _RouteFactory.fade(pageBuilder, duration, ease);
     }
@@ -89,7 +97,7 @@ class PageLink extends StatelessWidget {
   // If a tap link exists, fire it off.
   void _handleTap(BuildContext context) {
     PageLinkInfo? info =
-        links.firstWhereOrNull((i) => i.trigger == LinkTrigger.Tap);
+        links.firstWhereOrNull((i) => i.trigger == LinkTrigger.tap);
     if (info != null) {
       _handlePageLinkTriggered(context, info);
     }

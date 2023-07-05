@@ -14,12 +14,10 @@ class TransitionUtility {
   ];
 
   int _getStartIndex() {
-    print(order.indexOf(start));
     return order.indexOf(start);
   }
 
   int _getTargetIndex() {
-    print(order.indexOf(target));
     return order.indexOf(target);
   }
 
@@ -29,9 +27,9 @@ class TransitionUtility {
 
   LinkTransition getTransition() {
     if (_isLeft()) {
-      return LinkTransition.SlideLeft;
+      return LinkTransition.slideLeft;
     } else {
-      return LinkTransition.SlideRight;
+      return LinkTransition.slideRight;
     }
   }
 }
