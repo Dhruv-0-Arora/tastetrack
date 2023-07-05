@@ -3,10 +3,13 @@ import 'package:tastetrack/XDUtil/pinned.dart';
 import 'package:tastetrack/XDUtil/page_link.dart';
 
 import '../../Pages/home_page.dart';
+import '../transition_utility.dart';
 
 class HomeIcon extends StatelessWidget {
+  final String start;
   const HomeIcon({
     Key? key,
+    required this.start,
   }) : super(key: key);
 
   @override
@@ -17,7 +20,8 @@ class HomeIcon extends StatelessWidget {
       child: PageLink(
         links: [
           PageLinkInfo(
-            transition: LinkTransition.SlideLeft,
+            transition: TransitionUtility(start: start, target: "home")
+                .getTransition(), // getting transition type
             ease: Curves.easeOut,
             duration: 0.3,
             pageBuilder: () => const HomePage(),

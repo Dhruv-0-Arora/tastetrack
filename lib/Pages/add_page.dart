@@ -16,7 +16,7 @@ class AddPage extends StatelessWidget {
           Pinned.fromPins(
             Pin(start: 0.0, end: 0.0),
             Pin(size: 78.0, end: 0.0),
-            child: NavBar(),
+            child: NavBarAdd(),
           ),
           Pinned.fromPins(
             Pin(start: 0.0, end: -0.3),

@@ -4,17 +4,17 @@ import 'package:tastetrack/XDUtil/page_link.dart';
 import '../../Pages/add_page.dart';
 import '../transition_utility.dart';
 
-class DiscoverIcon extends StatelessWidget {
+class AddIcon extends StatelessWidget {
   final String start;
-  const DiscoverIcon({Key? key, required this.start}) : super(key: key);
+  const AddIcon({Key? key, required this.start}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return PageLink(
       links: [
         PageLinkInfo(
-          transition: TransitionUtility(start: start, target: "discover")
-              .getTransition(),
+          transition: TransitionUtility(start: start, target: "add")
+              .getTransition(), // getting transition type
           ease: Curves.easeOut,
           duration: 0.3,
           pageBuilder: () => const AddPage(),

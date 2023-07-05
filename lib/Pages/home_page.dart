@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           Pinned.fromPins(
             Pin(start: 0.0, end: 0.0),
             Pin(size: 78.0, end: 0.0),
-            child: NavBar(),
+            child: NavBarHome(),
           ),
           Pinned.fromPins(
             Pin(start: -0.3, end: 0.0),

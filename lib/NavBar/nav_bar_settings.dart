@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:tastetrack/Pages/discover_page.dart';
-import 'package:tastetrack/Pages/settings_page.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import 'package:tastetrack/XDUtil/page_link.dart';
 
 import 'Icons/add_icon.dart';
 import 'Icons/discover_icon.dart';
-import 'Icons/settings_icon.dart';
+import 'Icons/home_icon.dart';
 
-class NavBarHome extends StatelessWidget {
-  const NavBarHome({
+class NavBarSettings extends StatelessWidget {
+  const NavBarSettings({
     Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        /* 
+        /*
           Top Shadow for Navigation bar
         */
         Container(
@@ -31,34 +28,29 @@ class NavBarHome extends StatelessWidget {
             ],
           ),
         ),
+        const HomeIcon(start: "settings"),
+        const AddIcon(start: "settings"),
+        const DiscoverIcon(start: "settings"),
 
-        /*
-          Home Icon (Green)
-        */
+        // green settings Icon
         Pinned.fromPins(
-          const Pin(size: 37.0, start: 43.0),
+          const Pin(size: 37.0, end: 44.0),
           const Pin(start: 11.0, end: 30.0),
           child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/navbar/homeGreen.png'),
+            decoration: BoxDecoration(
+              image: const DecorationImage(
+                image: AssetImage('assets/images/navbar/settingsGreen.png'),
                 fit: BoxFit.fill,
               ),
+              borderRadius: BorderRadius.circular(47.0),
             ),
           ),
         ),
-        const AddIcon(start: "home"),
-        const DiscoverIcon(start: "home"),
-        const SettingsIcon(start: "home"),
-
-        /*
-          Green text -> Home
-        */
         const Pinned.fromPins(
-          Pin(size: 58.0, start: 34.0),
+          Pin(size: 70.0, end: 28.0),
           Pin(start: 48.0, end: 6.0),
           child: Text(
-            'Home',
+            'Settings',
             style: TextStyle(
               fontFamily: 'Product Sans',
               fontSize: 20,

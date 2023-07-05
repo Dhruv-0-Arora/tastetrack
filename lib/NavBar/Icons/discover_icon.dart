@@ -18,7 +18,7 @@ class DiscoverIcon extends StatelessWidget {
         links: [
           PageLinkInfo(
             transition: TransitionUtility(start: start, target: "discover")
-                .getTransition(),
+                .getTransition(), // getting transition type
             ease: Curves.easeOut,
             duration: 0.3,
             pageBuilder: () => const DiscoverPage(),

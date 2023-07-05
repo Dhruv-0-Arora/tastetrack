@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
 
+import 'Icons/add_icon.dart';
+import 'Icons/home_icon.dart';
+import 'Icons/settings_icon.dart';
+
 class NavBarDiscover extends StatelessWidget {
   const NavBarDiscover({
     Key? key,
@@ -9,6 +13,7 @@ class NavBarDiscover extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
+        // shadow
         Container(
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
@@ -21,25 +26,17 @@ class NavBarDiscover extends StatelessWidget {
             ],
           ),
         ),
-        const HomeIcon(),
-        Container(
-          decoration: BoxDecoration(
-            image: const DecorationImage(
-              image: AssetImage('assets/images/navbar/plus.png'),
-              fit: BoxFit.cover,
-            ),
-            borderRadius:
-                const BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-            border: Border.all(width: 3.0, color: const Color(0xffadadad)),
-          ),
-          margin: const EdgeInsets.fromLTRB(122.0, 16.0, 221.0, 13.0),
-        ),
+
+        // icons
+        const HomeIcon(start: "discover"),
+
+        const AddIcon(start: "discover"),
+
+        // green Discover Icon
         Pinned.fromPins(
           const Pin(size: 38.0, middle: 0.6197),
           const Pin(start: 8.0, end: 32.0),
-          child:
-              // Adobe XD layer: 'discover' (shape)
-              Container(
+          child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/navbar/discoverGreen.png'),
@@ -48,21 +45,10 @@ class NavBarDiscover extends StatelessWidget {
             ),
           ),
         ),
-        Pinned.fromPins(
-          const Pin(size: 57.0, end: 35.0),
-          const Pin(start: 11.0, end: 10.0),
-          child:
-              // Adobe XD layer: 'settings' (shape)
-              Container(
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage('assets/images/navbar/settings.png'),
-                fit: BoxFit.fill,
-              ),
-              borderRadius: BorderRadius.circular(47.0),
-            ),
-          ),
-        ),
+
+        const SettingsIcon(start: "discover"),
+
+        // Discover text
         const Align(
           alignment: Alignment(0.268, 0.704),
           child: SizedBox(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tastetrack/NavBar/nav_bar_discover.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import '../NavBar/nav_bar_home.dart';
 import '../Components/top_bar.dart';
 
 class DiscoverPage extends StatelessWidget {
@@ -16,7 +16,7 @@ class DiscoverPage extends StatelessWidget {
           Pinned.fromPins(
             Pin(start: 0.0, end: 0.0),
             Pin(size: 78.0, end: 0.0),
-            child: NavBar(),
+            child: NavBarDiscover(),
           ),
           Pinned.fromPins(
             Pin(start: 0.0, end: -0.3),
