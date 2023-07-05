@@ -12,7 +12,7 @@ class AddIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Pinned.fromPins(
-      const Pin(size: 56.0, middle: 0.335),
+      const Pin(size: 56.0, middle: 0.34),
       const Pin(start: 12.0, end: 12.0),
       child: PageLink(
         links: [
