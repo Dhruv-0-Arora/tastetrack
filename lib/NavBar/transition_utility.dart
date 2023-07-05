@@ -8,8 +8,8 @@ class TransitionUtility {
 
   final order = [
     'home',
-    'discover',
     'plus',
+    'discover',
     'settings',
   ];
 

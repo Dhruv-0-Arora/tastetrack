@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import '../NavBar/nav_bar_home.dart';
+import '../NavBar/States/nav_bar_home.dart';
 import '../Components/top_bar.dart';
 
 class HomePage extends StatelessWidget {

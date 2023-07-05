@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
 
-import 'Icons/add_icon.dart';
-import 'Icons/home_icon.dart';
-import 'Icons/settings_icon.dart';
+import '../Icons/add_icon.dart';
+import '../Icons/home_icon.dart';
+import '../Icons/settings_icon.dart';
 
 class NavBarDiscover extends StatelessWidget {
   const NavBarDiscover({

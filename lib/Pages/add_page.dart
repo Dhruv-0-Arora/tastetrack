@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import 'package:tastetrack/NavBar/nav_bar_add.dart';
+import 'package:tastetrack/NavBar/States/nav_bar_add.dart';
 import '../Components/top_bar.dart';
 
 class AddPage extends StatelessWidget {

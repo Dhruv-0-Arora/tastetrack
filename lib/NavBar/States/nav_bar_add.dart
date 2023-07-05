@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tastetrack/XDUtil/pinned.dart';
 
-import 'Icons/home_icon.dart';
-import 'Icons/discover_icon.dart';
-import 'Icons/settings_icon.dart';
+import '../Icons/home_icon.dart';
+import '../Icons/discover_icon.dart';
+import '../Icons/settings_icon.dart';
 
 class NavBarAdd extends StatelessWidget {
   const NavBarAdd({
@@ -34,17 +35,17 @@ class NavBarAdd extends StatelessWidget {
         /*
           Plus Icon (selected) -> green
         */
-        Container(
-          decoration: BoxDecoration(
-            image: const DecorationImage(
-              image: AssetImage('assets/images/navbar/plusGreen.png'),
-              fit: BoxFit.cover,
+        Pinned.fromPins(
+          const Pin(size: 36.0, middle: 0.377),
+          const Pin(start: 12.0, end: 32.0),
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/navbar/plusGreen.png'),
+                fit: BoxFit.fill,
+              ),
             ),
-            borderRadius:
-                const BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-            border: Border.all(width: 3.0, color: const Color(0xffadadad)),
           ),
-          margin: const EdgeInsets.fromLTRB(135.0, 11.0, 223.0, 33.0),
         ),
 
         // Discover Page button
