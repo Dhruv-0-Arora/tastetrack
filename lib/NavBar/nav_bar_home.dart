@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tastetrack/Pages/discover_page.dart';
-import 'package:tastetrack/Pages/settings_page.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import 'package:tastetrack/XDUtil/page_link.dart';
 
 import 'Icons/add_icon.dart';
 import 'Icons/discover_icon.dart';
