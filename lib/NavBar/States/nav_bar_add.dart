@@ -30,7 +30,7 @@ class NavBarAdd extends StatelessWidget {
         ),
 
         // Home Page button
-        const HomeIcon(start: "add"),
+        const HomeIcon(start: "plus"),
 
         /*
           Plus Icon (selected) -> green
@@ -49,10 +49,10 @@ class NavBarAdd extends StatelessWidget {
         ),
 
         // Discover Page button
-        const DiscoverIcon(start: "add"),
+        const DiscoverIcon(start: "plus"),
 
         // Settings Page Button
-        const SettingsIcon(start: "add"),
+        const SettingsIcon(start: "plus"),
 
         /*
           Green Text -> Add

@@ -17,7 +17,7 @@ class SettingsIcon extends StatelessWidget {
       child: PageLink(
         links: [
           PageLinkInfo(
-            transition: TransitionUtility(start: start, target: "home")
+            transition: TransitionUtility(start: start, target: "settings")
                 .getTransition(), // getting transition type
             ease: Curves.easeOut,
             duration: 0.3,

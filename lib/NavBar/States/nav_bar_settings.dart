@@ -53,7 +53,7 @@ class NavBarSettings extends StatelessWidget {
             'Settings',
             style: TextStyle(
               fontFamily: 'Product Sans',
-              fontSize: 20,
+              fontSize: 18,
               color: Color(0xff8c9d32),
             ),
             textAlign: TextAlign.center,

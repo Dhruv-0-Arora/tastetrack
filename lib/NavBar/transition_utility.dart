@@ -14,10 +14,12 @@ class TransitionUtility {
   ];
 
   int _getStartIndex() {
+    print(order.indexOf(start));
     return order.indexOf(start);
   }
 
   int _getTargetIndex() {
+    print(order.indexOf(target));
     return order.indexOf(target);
   }
 
@@ -25,16 +27,11 @@ class TransitionUtility {
     return _getStartIndex() > _getTargetIndex();
   }
 
-  bool _isRight() {
-    return _getStartIndex() < _getTargetIndex();
-  }
-
   LinkTransition getTransition() {
     if (_isLeft()) {
       return LinkTransition.SlideLeft;
-    } else if (_isRight()) {
+    } else {
       return LinkTransition.SlideRight;
     }
-    return LinkTransition.SlideLeft;
   }
 }

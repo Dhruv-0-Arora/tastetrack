@@ -17,7 +17,7 @@ class AddIcon extends StatelessWidget {
       child: PageLink(
         links: [
           PageLinkInfo(
-            transition: TransitionUtility(start: start, target: "add")
+            transition: TransitionUtility(start: start, target: "plus")
                 .getTransition(), // getting transition type
             ease: Curves.easeOut,
             duration: 0.3,
