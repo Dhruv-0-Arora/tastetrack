@@ -34,7 +34,7 @@ class NavBarDiscover extends StatelessWidget {
 
         // green Discover Icon
         Pinned.fromPins(
-          const Pin(size: 38.0, middle: 0.6197),
+          const Pin(size: 38.0, middle: 0.605),
           const Pin(start: 8.0, end: 32.0),
           child: Container(
             decoration: const BoxDecoration(
@@ -58,7 +58,7 @@ class NavBarDiscover extends StatelessWidget {
               'Discover',
               style: TextStyle(
                 fontFamily: 'Product Sans',
-                fontSize: 20,
+                fontSize: 19,
                 color: Color(0xff8c9d32),
               ),
               textAlign: TextAlign.center,
