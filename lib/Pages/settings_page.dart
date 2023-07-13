@@ -13,15 +13,26 @@ class SettingsPage extends StatelessWidget {
       backgroundColor: Color(0xffcbd6d5),
       body: Stack(
         children: <Widget>[
-          Pinned.fromPins(
-            Pin(start: 0.0, end: 0.0),
-            Pin(size: 78.0, end: 0.0),
-            child: NavBarSettings(),
-          ),
+          // Top Bar
           Pinned.fromPins(
             Pin(start: 0.0, end: -0.3),
             Pin(size: 95.2, start: 0.0),
             child: TopBar(),
+          ),
+
+          // Display email
+
+          // Display Login Button
+
+          // Display Logout Button
+
+          // Display Theme Button
+
+          // NavBar
+          Pinned.fromPins(
+            Pin(start: 0.0, end: 0.0),
+            Pin(size: 78.0, end: 0.0),
+            child: NavBarSettings(),
           ),
         ],
       ),

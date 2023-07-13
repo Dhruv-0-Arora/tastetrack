@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tastetrack/Components/Login/Welcome/google_button.dart';
+import 'package:tastetrack/Components/google_button.dart';
 import 'package:tastetrack/XDUtil/pinned.dart';
-import '../Components/Login/Welcome/sign_up_button.dart';
-import '../Login/sign_up_page.dart';
 import 'package:tastetrack/XDUtil/page_link.dart';
 import '../Login/login_page.dart';
 import '../Components/top_bar.dart';
@@ -75,7 +73,7 @@ class WelcomePage extends StatelessWidget {
 
           // Sign up text
           const Pinned.fromPins(
-              Pin(size: 175.0, middle: 0.5345), Pin(size: 53.0, middle: 0.53),
+              Pin(size: 175.0, middle: 0.5345), Pin(size: 53.0, start: 440),
               child: Text('Login/Sign Up',
                   style: TextStyle(
                     fontFamily: 'Product Sans',
@@ -87,7 +85,7 @@ class WelcomePage extends StatelessWidget {
           // Sign in with Google Button
           Pinned.fromPins(
             const Pin(size: 294.0, middle: 0.5051),
-            const Pin(size: 53.0, middle: 0.59),
+            const Pin(size: 53.0, start: 490),
             child: PageLink(
               links: [
                 PageLinkInfo(
@@ -103,7 +101,7 @@ class WelcomePage extends StatelessWidget {
 
           // skip Sign in
           const Pinned.fromPins(
-              Pin(size: 86, middle: 0.511), Pin(size: 53.0, middle: 0.655),
+              Pin(size: 86, middle: 0.511), Pin(size: 53.0, start: 550),
               child: Text(
                 'Skip Login',
                 style: TextStyle(
