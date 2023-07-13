@@ -40,23 +40,7 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
 
-          // Sign in with Google Button
-          Pinned.fromPins(
-            const Pin(size: 294.0, middle: 0.5051),
-            const Pin(size: 53.0, start: 535.0),
-            child: PageLink(
-              links: [
-                PageLinkInfo(
-                  transition: LinkTransition.slideLeft,
-                  ease: Curves.easeOut,
-                  duration: 0.3,
-                  pageBuilder: () => const LoginPage(),
-                ),
-              ],
-              child: const GoogleButton(),
-            ),
-          ),
-
+          // About text
           const Pinned.fromPins(
             Pin(startFraction: 0.0611, endFraction: 0.0611),
             Pin(size: 203.0, start: 248.0),
@@ -88,6 +72,49 @@ class WelcomePage extends StatelessWidget {
                   TextHeightBehavior(applyHeightToFirstAscent: false),
             ),
           ),
+
+          // Sign up text
+          const Pinned.fromPins(
+              Pin(size: 175.0, middle: 0.5345), Pin(size: 53.0, middle: 0.53),
+              child: Text('Login/Sign Up',
+                  style: TextStyle(
+                    fontFamily: 'Product Sans',
+                    fontSize: 24,
+                    color: Color(0xff8c9d32),
+                    fontWeight: FontWeight.w700,
+                  ))),
+
+          // Sign in with Google Button
+          Pinned.fromPins(
+            const Pin(size: 294.0, middle: 0.5051),
+            const Pin(size: 53.0, middle: 0.59),
+            child: PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.slideLeft,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => const LoginPage(),
+                ),
+              ],
+              child: const GoogleButton(),
+            ),
+          ),
+
+          // skip Sign in
+          const Pinned.fromPins(
+              Pin(size: 86, middle: 0.511), Pin(size: 53.0, middle: 0.655),
+              child: Text(
+                'Skip Login',
+                style: TextStyle(
+                  fontFamily: 'Product Sans',
+                  fontSize: 18,
+                  color: Color(0xff0a3c03),
+                  fontWeight: FontWeight.w700,
+                  decoration: TextDecoration.underline,
+                ),
+              )),
+
           // q: how do I make this text reactive and stay centered?
           // a: use a stack and position the text
           // Welcome Text

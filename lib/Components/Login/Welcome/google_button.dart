@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tastetrack/XDUtil/pinned.dart';
 
 class GoogleButton extends StatelessWidget {
   const GoogleButton({
@@ -19,10 +18,10 @@ class GoogleButton extends StatelessWidget {
           ),
         ),
       ),
-      Container(
+      const SizedBox(
         width: 354.31,
         height: 53,
-        child: const Stack(
+        child: Stack(
           children: [
             Positioned(
               left: 113.36,
